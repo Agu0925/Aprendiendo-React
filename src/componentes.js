@@ -46,22 +46,28 @@ export const App3 = () => {
   );
 };
 export const App4 = () => {
-    const [value, setValue] = useState("");
-    const [value2, setValue2] = useState("");
-    const [value3, setValue3] = useState("");
-    return (
-      <>
-        <input id='nombre' type="text" value={value} onChange={(e) => setValue(e.target.value)} placeholder='Nombre'></input>
-        <input id='apellido' type="text" value={value2} onChange={(e) => setValue2(e.target.value)} placeholder='Apellido'></input>
-        <input id='mail' type="text" value={value3} onChange={(e) => setValue3(e.target.value)} placeholder='Email'></input>
-        <button onClick={() => {
-          localStorage.setItem("nombre", value);
-          localStorage.setItem("apellido", value2);
-          localStorage.setItem("mail", value3);
-        }}>
-          Guardar valor en el almacenamiento local
-        </button>
-      </>
-    )
+  const [value, setValue] = useState(localStorage.getItem("nombre") || "");
+  const [value2, setValue2] = useState(localStorage.getItem("apellido") || "");
+  const [value3, setValue3] = useState(localStorage.getItem("mail") || "");
+  const funcionGuardar = () => {
+    if (value === "" || value2 === "" || value3 === "") {
+      alert("Todos los campos son requeridos");
+    } else {
+      localStorage.setItem("nombre", value);
+      localStorage.setItem("apellido", value2);
+      localStorage.setItem("mail", value3);
+      alert("Guardado Correctamente");
+    }
+  };
+  return (
+    <>
+      <input id='nombre' type="text" value={value} onChange={(e) => setValue(e.target.value)} placeholder='Nombre'></input>
+      <input id='apellido' type="text" value={value2} onChange={(e) => setValue2(e.target.value)} placeholder='Apellido'></input>
+      <input id='mail' type="text" value={value3} onChange={(e) => setValue3(e.target.value)} placeholder='Email'></input>
+      <button onClick={funcionGuardar}>
+        Guardar Datos
+      </button>
+    </>
+  )
 };
 

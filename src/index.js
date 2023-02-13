@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactDOM from "react-dom";
+import { createRoot } from 'react-dom/client';
 import "./App.css";
-import {App3} from './componentes';
-import {App4} from './componentes';
+import { App3 } from './componentes';
+import { App4 } from './componentes';
 const AppReact = () => {
     return (
         <>
@@ -15,9 +15,5 @@ const AppReact = () => {
     );
 };
 //Show the component on the element with id "root" in the HTML
-ReactDOM.render(<AppReact />, document.getElementById("root"));
-if (localStorage.getItem("react")){
-    document.getElementById("nombre").value = localStorage.getItem("nombre");
-    document.getElementById("apellido").value = localStorage.getItem("apellido");
-    document.getElementById("mail").value = localStorage.getItem("mail");
-}
+const root = createRoot(document.getElementById("root"));
+root.render(<AppReact />);
