@@ -51,9 +51,9 @@ export const App4 = () => {
     const [value3, setValue3] = useState("");
     return (
       <>
-        <input id='nombre' type="text" value={value} onChange={e => setValue(e.target.value)} placeholder='Nombre'></input>
-        <input id='apellido' type="text" value={value2} onChange={e => setValue2(e.target.value)} placeholder='Nombre'></input>
-        <input id='mail' type="text" value={value3} onChange={e => setValue3(e.target.value)} placeholder='Nombre'></input>
+        <input id='nombre' type="text" value={value} onChange={(e) => setValue(e.target.value)} placeholder='Nombre'></input>
+        <input id='apellido' type="text" value={value2} onChange={(e) => setValue2(e.target.value)} placeholder='Apellido'></input>
+        <input id='mail' type="text" value={value3} onChange={(e) => setValue3(e.target.value)} placeholder='Email'></input>
         <button onClick={() => {
           localStorage.setItem("nombre", value);
           localStorage.setItem("apellido", value2);
