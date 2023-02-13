@@ -61,12 +61,15 @@ export const App4 = () => {
   };
   return (
     <>
-      <input id='nombre' type="text" value={value} onChange={(e) => setValue(e.target.value)} placeholder='Nombre'></input>
-      <input id='apellido' type="text" value={value2} onChange={(e) => setValue2(e.target.value)} placeholder='Apellido'></input>
-      <input id='mail' type="text" value={value3} onChange={(e) => setValue3(e.target.value)} placeholder='Email'></input>
-      <button onClick={funcionGuardar}>
-        Guardar Datos
-      </button>
+      <h2>Guardar en localStorage con ReactJS</h2>
+      <form className="w-50 m-auto">
+        <input className='input-group' id='nombre' type="text" value={value} onChange={(e) => setValue(e.target.value)} placeholder='Nombre'></input>
+        <input className='input-group' id='apellido' type="text" value={value2} onChange={(e) => setValue2(e.target.value)} placeholder='Apellido'></input>
+        <input className='input-group' id='mail' type="text" value={value3} onChange={(e) => setValue3(e.target.value)} placeholder='Email'></input>
+        <button className='btn border m-4' onClick={funcionGuardar}>
+          Guardar Datos
+        </button>
+      </form>
     </>
   )
 };
